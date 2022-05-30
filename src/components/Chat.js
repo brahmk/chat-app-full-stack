@@ -33,13 +33,13 @@ export default function Chat() {
       body: JSON.stringify(newMessage)
       //body: JSON.stringify({message: 'My mesage'})
     })
-      .then((data) => console.log(data))
+      .then(/*clear form*/)
       .catch(console.error);
   };
 
   const handleChange = (e) => {
     setNewMessage({message:e.target.value}) 
-    console.log(newMessage)
+    
 }
 
   return (

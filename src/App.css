@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -7,10 +8,21 @@
   pointer-events: none;
 }
 
+.Scrollbox{
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  overflow-y: scroll;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.fixedbox{
+  position: absolute;
 }
 
 .App-header {
@@ -36,3 +48,5 @@
     transform: rotate(360deg);
   }
 }
+
+

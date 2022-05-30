@@ -1,22 +1,17 @@
-import { React, useState, useEffect } from "react";
+import { React } from "react";
 
-
-export default function MessageList() {
-  const [messages, setMessages] = useState([]);
-
-  useEffect(() => {
-    fetch("https://chat-app-api-bk.web.app/messages")
-      .then((res) => res.json())
-      .then(setMessages)
-      .catch(console.error);
-  }, []);
-
+export default function MessageList({ messages }) {
+  const sortedMessages = messages.sort(function (a,b){
+    return a.id - b.id
+  })
   return (
     <>
       <div>
-        {messages.map((item) => {
+        
+        {sortedMessages.map((item) => {
           const { message, id } = item;
-          return <p key={id}>{message}</p>;
+          
+          return <div className="msgbox"> <p className="msgbox" key={id}>{message}</p> </div>;
         })}
       </div>
     </>
